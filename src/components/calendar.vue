@@ -6,13 +6,13 @@
     </div>
     <div class='calen-date'>
       <span>
-        <a herf='javascript:' @click='preYear'><<</a>
-        <a herf='javascript:' @click='prevMonth'><</a>
+        <a herf='javascript:' @click='preYear'>&lt;&lt;</a>
+        <a herf='javascript:' @click='prevMonth'>&lt;</a>
       </span>
       <span class='date-time'>{{year}}年{{month}}月</span>
       <span>
-        <a herf='javascript:' @click='nextMonth'>></a>
-        <a herf='javascript:' @click='nextYear'>>></a>
+        <a herf='javascript:' @click='nextMonth'>&gt;</a>
+        <a herf='javascript:' @click='nextYear'>&gt;&gt;</a>
       </span>
     </div>
     <div class='table-box'>
@@ -77,7 +77,7 @@ export default {
     }
   },
   created: function () {
-    this._init()
+    this.initFn()
   },
   watch: {
     month: function () {
@@ -90,7 +90,7 @@ export default {
     }
   },
   methods: {
-    _init: function () {
+    initFn: function () {
       this.value = new Date()
       this.initYear = this.value.getFullYear()
       this.initMonth = this.value.getMonth() + 1
@@ -246,7 +246,7 @@ export default {
   .table-box .day-box {
     position: relative;
     height: 35px;
-    padding-top: 5px;
+    padding: 2px 0;
     text-align: center;
   }
   .table-box .table-td .none-td {
@@ -273,7 +273,7 @@ export default {
   }
   .go-home, .leave-home {
     display: none;
-   /* margin-top: 2px;*/
+    /*margin-bottom: 2px;*/
   }
   .table-box .table-inbox .activeClass .go-home,.table-box .table-inbox .leactiveClass .leave-home {
     display: block;

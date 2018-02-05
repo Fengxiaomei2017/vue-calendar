@@ -1,5 +1,8 @@
 <template>
-  <Calendar :single=false class='calendar'></Calendar>
+  <div>
+    <Calendar :single=false class='calendar'></Calendar>
+    <Map></Map>
+  </div>
 </template>
 <script>
 import Calendar from '@/components/calendar.vue'
@@ -11,9 +14,9 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .calendar {
-      position: fixed;
-      top: 0;
-      left: 0;
-    }
+  /*.calendar {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }*/
 </style>
